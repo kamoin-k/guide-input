@@ -132,6 +132,7 @@
             xhr.open('POST', 'https://script.google.com/macros/s/AKfycbxdBe3qX3R0OuAQbHpR8ZmJYrsNKg0b4hWH__B-Pq4OhGiMVaYyNnF2FCyHSQRMWfHZKw/exec', true);  // ご自身のGAS WebアプリのURLに置き換えてください
 
             // フォームデータを送信
+            document.write("\nフォームデータは、" + formData + "です");
             xhr.send(formData);
         }
     </script>
