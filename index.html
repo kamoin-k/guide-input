@@ -114,13 +114,13 @@
             liff.sendMessages([
                 {
                     type: 'text',
-                    text: 'User ID: ' + formData.get('user_id') + '\nShop Name: ' + formData.get('shop_name') + '\nCategory: ' + formData.get('category')
+                    text: 'お店の名前: ' + formData.get('shop_name') + '住所: ' + formData.get('adress') + '電話番号: ' + formData.get('phone') + '\nCategory: ' + formData.get('category')
                 }
             ]).then(() => {
                 // 送信成功時にデータをリセット
                 document.getElementById('myForm').reset();
                 updateSpreadsheet(formData);
-        		// liff.closeWindow();
+        		liff.closeWindow();
             }).catch((error) => {
                 console.error('Failed to send message', error);
             });
@@ -132,7 +132,6 @@
             xhr.open('POST', 'https://script.google.com/macros/s/AKfycbxdBe3qX3R0OuAQbHpR8ZmJYrsNKg0b4hWH__B-Pq4OhGiMVaYyNnF2FCyHSQRMWfHZKw/exec', true);  // ご自身のGAS WebアプリのURLに置き換えてください
 
             // フォームデータを送信
-            document.write("\nフォームデータは、" + formData + "です");
             xhr.send(formData);
         }
     </script>
