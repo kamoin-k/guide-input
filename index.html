@@ -114,7 +114,7 @@
             liff.sendMessages([
                 {
                     type: 'text',
-                    text: 'お店の名前: ' + formData.get('shop_name') + '住所: ' + formData.get('adress') + '電話番号: ' + formData.get('phone') + '\nCategory: ' + formData.get('category')
+                    text: 'お店の名前: ' + formData.get('shop_name') + '\n住所: ' + formData.get('address') + '\n電話番号: ' + formData.get('phone') + '\nCategory: ' + formData.get('category')
                 }
             ]).then(() => {
                 // 送信成功時にデータをリセット
