@@ -4,18 +4,15 @@
     <meta charset="UTF-8">
     <title>鴨川ガイド入稿</title>
     <script src="https://static.line-scdn.net/liff/edge/2.1/sdk.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/themes/base/jquery-ui.min.css">
 </head>
 <body>
     <h1>鴨川ガイド入稿</h1>
-    <form id="myForm">
-        <label for="user_id">User ID:</label>
-        <input type="text" id="user_id" name="user_id" required><br><br>
-
-        <label for="date">Date:</label>
-        <input type="date" id="date" name="date" required><br><br>
-
+    <form id="myForm" class="w-75 mx-auto">
         <label for="shop_name">お店の名前:</label>
-        <input type="text" id="shop_name" name="shop_name" required><br><br>
+        <input class="form-control w-100 mt-1" type="text" id="shop_name" name="shop_name" required><br><br>
 
         <label for="address">住所:</label>
         <input type="text" id="address" name="address" required><br><br>
@@ -42,9 +39,6 @@
 
         <label for="price">Main Product Price:</label>
         <input type="text" id="price" name="price" required><br><br>
-
-        <label for="image">Image:</label>
-        <input type="file" id="image" name="image" accept="image/*" required><br><br>
 
         <input type="submit" value="Submit">
     </form>
@@ -78,7 +72,6 @@
                 const data = await response.json();
 
                 if (data) {
-                    document.getElementById('date').value = data.date;
                     document.getElementById('shop_name').value = data.shop_name;
                     document.getElementById('address').value = data.address;
                     document.getElementById('phone').value = data.phone;
@@ -99,8 +92,6 @@
             event.preventDefault();  // デフォルトのフォーム送信をキャンセル
 
             var formData = new FormData();
-            formData.append('user_id', document.getElementById('user_id').value);
-            formData.append('date', document.getElementById('date').value);
             formData.append('shop_name', document.getElementById('shop_name').value);
             formData.append('address', document.getElementById('address').value);
             formData.append('phone', document.getElementById('phone').value);
@@ -109,8 +100,7 @@
             formData.append('category', document.getElementById('category').value);
             formData.append('shop_intro', document.getElementById('shop_intro').value);
             formData.append('price', document.getElementById('price').value);
-            formData.append('image', document.getElementById('image').files[0]);
-
+            
             liff.sendMessages([
                 {
                     type: 'text',
