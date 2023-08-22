@@ -38,9 +38,9 @@
         </select><br><br>
 
         <label for="shop_intro">お店の紹介:</label>
-        <textarea class="form-control w-100 mt-1" id="shop_intro" name="shop_intro" required></textarea><br><br>
+        <textarea id="shop_intro" name="shop_intro" required></textarea><br><br>
 
-        <label for="price">一押し商品情報:</label>
+        <label for="price">お店のおすすめ:</label>
         <input class="form-control w-100 mt-1" type="text" id="price" name="price" required><br><br>
 
         <input type="submit" value="送信">
@@ -109,7 +109,9 @@
             liff.sendMessages([
                 {
                     type: 'text',
-                    text: formData.get('user_id') + '\nお店の名前: ' + formData.get('shop_name') + '\n住所: ' + formData.get('address') + '\n電話番号: ' + formData.get('phone') + '\nCategory: ' + formData.get('category')
+                    text: 'お店の名前: ' + formData.get('shop_name') + '\n住所: ' + formData.get('address') + '\n電話番号: ' + formData.get('phone') + 
+                          '\nカテゴリー: ' + formData.get('category') + '\n営業時間:' + formData.get('business_hours')  + '\n定休日:' + formData.get('regular_holiday') + 
+                          '\nお店の紹介:' + formData.get('shop_intro') +  '\nお店のおすすめ:' + formData.get('price') 
                 }
             ]).then(() => {
                 // 送信成功時にデータをリセット
