@@ -93,6 +93,7 @@
             event.preventDefault();  // デフォルトのフォーム送信をキャンセル
 
             var formData = new FormData();
+            formData.append('userId', document.getElementById('userId').value);
             formData.append('shop_name', document.getElementById('shop_name').value);
             formData.append('address', document.getElementById('address').value);
             formData.append('phone', document.getElementById('phone').value);
