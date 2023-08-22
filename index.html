@@ -9,24 +9,23 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/themes/base/jquery-ui.min.css">
 </head>
 <body>
-    <h1>鴨川ガイド入稿</h1>
     <form id="myForm" class="w-75 mx-auto">
         <label for="shop_name">お店の名前:</label>
         <input class="form-control w-100 mt-1" type="text" id="shop_name" name="shop_name" required><br><br>
 
         <label for="address">住所:</label>
-        <input type="text" id="address" name="address" required><br><br>
+        <input class="form-control w-100 mt-1" type="text" id="address" name="address" required><br><br>
 
         <label for="phone">電話番号:</label>
-        <input type="text" id="phone" name="phone" required><br><br>
+        <input class="form-control w-100 mt-1" type="text" id="phone" name="phone" required><br><br>
 
         <label for="business_hours">営業時間:</label>
-        <input type="text" id="business_hours" name="business_hours" required><br><br>
+        <input class="form-control w-100 mt-1" type="text" id="business_hours" name="business_hours" required><br><br>
 
-        <label for="regular_holiday">Regular Holiday:</label>
-        <input type="text" id="regular_holiday" name="regular_holiday" required><br><br>
+        <label for="regular_holiday">定休日:</label>
+        <input class="form-control w-100 mt-1" type="text" id="regular_holiday" name="regular_holiday" required><br><br>
 
-        <label for="category">Category:</label>
+        <label for="category">カテゴリー:</label>
         <select id="category" name="category" required>
             <option value="グルメ">グルメ</option>
             <option value="ショッピング">ショッピング</option>
@@ -34,13 +33,13 @@
             <option value="その他">その他</option>
         </select><br><br>
 
-        <label for="shop_intro">Shop Introduction:</label>
+        <label for="shop_intro">お店の紹介:</label>
         <textarea id="shop_intro" name="shop_intro" required></textarea><br><br>
 
-        <label for="price">Main Product Price:</label>
+        <label for="price">一押し商品情報:</label>
         <input type="text" id="price" name="price" required><br><br>
 
-        <input type="submit" value="Submit">
+        <input type="submit" value="送信">
     </form>
 
     <script>
