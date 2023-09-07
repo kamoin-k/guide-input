@@ -111,7 +111,8 @@
                     type: 'text',
                     text: 'お店の名前: ' + formData.get('shop_name') + '\n住所: ' + formData.get('address') + '\n電話番号: ' + formData.get('phone') + 
                           '\nカテゴリー: ' + formData.get('category') + '\n営業時間:' + formData.get('business_hours')  + '\n定休日:' + formData.get('regular_holiday') + 
-                          '\nお店の紹介:' + formData.get('shop_intro') +  '\nお店のおすすめ:' + formData.get('price') 
+                          '\nお店の紹介:' + formData.get('shop_intro') +  '\nお店のおすすめ:' + formData.get('price')  + 
+                          '\n入稿ありがとうございます。\n\n続けてお店の写真とお店のQRコードをアップロードしてください。\nお店のQRコードがない場合はURLを入力してください。\nアップロードが終わったらこの画面を閉じてください。'
                 }
             ]).then(() => {
                 // 送信成功時にデータをリセット
